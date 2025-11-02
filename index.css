@@ -178,10 +178,7 @@ header {
 }
 
 .headerMajor {
-    z-index: 2;
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+    z-index: 3;
     width: 100%;
     height: inherit;
     display: flex;
@@ -192,24 +189,17 @@ header {
     background-color: var(--surface-warm);
 }
 
-/* .headerNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: inherit;
-    height: inherit;
-    padding: 0 3em 0 3.3em;
-} */
-
 .headerNav {
     z-index: 1;
     position: absolute;
     display: flex;
     flex-flow: column;
+    gap: 0.5em;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 400px;
+    padding: 0.5em 0 0 0;
+    height: fit-content;
     transition: all 1s ease-in;
 }
 
@@ -217,7 +207,7 @@ header {
     content: '';
     position: absolute;
     top: 0;
-    left: 2em;
+    left: 5%;
     width: 8px;
     height: 100%;
     background-color: white;
@@ -227,44 +217,56 @@ header {
     content: '';
     position: absolute;
     top: 0;
-    right: 2em;
+    right: 5%;
     width: 8px;
     height: 100%;
     background-color: white;
 }
 
-.headerNav > * > * {
+.headerNav--general, .headerNav--topics {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
 
+.headerNav > * > *::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 4%;
+    width: 8px;
+    height: 25%;
+    background-color: white;
+}
+
+.headerNav > * > *::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: 4%;
+    width: 8px;
+    height: 25%;
+    background-color: white;
+}
+
+.headerNav > * > * {
+    width: 99%;
+    height: 4em;
+    border-radius: 1.3em;
+    background-color: rgb(124, 124, 124);
 }
 
 #hiddenMenuButton {
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     border: none;
     right: 1.3%;
     top: 100%;
-    width: 50px;
+    width: 50px; /* here's not final values!!! */
     height: 250px;
     background-color: rebeccapurple;
-}
-
-.headerNav--general {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1em;
-}
-
-.generalLink--header {
-    width: 6.4em;
-    height: 2.2em;
-    border-radius: 0.4em;
-    background-color: transparent;
-}
-
-.generalLink--header:hover {
-    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .profileIcon {
@@ -299,25 +301,6 @@ header {
 #profileIconUser {
     font-size: 2.1em;
     top: 0.3em;
-}
-
-.headerNav--topics {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 1.2em;
-}
-
-.topicLink--header {
-    width: auto;
-    height: auto;
-    padding: 0.6em 0.4em 0.6em 0.4em;
-    border-radius: 0.4em;
-    background-color: transparent;
-}
-
-.topicLink--header:hover {
-    background-color: rgba(255, 255, 255, 0.15);
 }
 /*-------------------------------------------------------------*/
 
@@ -420,11 +403,15 @@ footer {
 
 .credits {
     display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.logo--container--footer {
+    white-space: nowrap;
 }
 
 .logo--footer {
@@ -447,6 +434,7 @@ footer {
 }
 
 .creditsLinks {
+    white-space: nowrap;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -601,6 +589,48 @@ body {
         "footer footer"
     ;
 }
+
+
+
+/* header */
+/* .headerNav--general {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.generalLink--header {
+    width: 6.4em;
+    height: 2.2em;
+    border-radius: 0.4em;
+    background-color: transparent;
+}
+
+.generalLink--header:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.headerNav--topics {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.2em;
+}
+
+.topicLink--header {
+    width: auto;
+    height: auto;
+    padding: 0.6em 0.4em 0.6em 0.4em;
+    border-radius: 0.4em;
+    background-color: transparent;
+}
+
+.topicLink--header:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+} */
+/*-------------------------------------------------------------*/
 
 
 /* main */

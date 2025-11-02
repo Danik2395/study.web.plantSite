@@ -12,11 +12,13 @@ parallax();
 
 
 const hiddenMenu = document.querySelector(".headerNav");
-let hiddenMenuHeight = getComputedStyle(hiddenMenu).height;
+let hiddenMenuHeight = 0;
 const hiddenMenuButton = document.getElementById("hiddenMenuButton");
 let hiddenMenuOpened = false;
 
 function hiddenMenuActivator() {
+    hiddenMenuHeight = getComputedStyle(hiddenMenu).height;
+
     if (!hiddenMenuOpened) hiddenMenu.style = `bottom: -${hiddenMenuHeight};`;
 
     else hiddenMenu.style = "bottom: 0;";
