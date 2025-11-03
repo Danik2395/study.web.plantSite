@@ -124,7 +124,7 @@ main { grid-area: main; }
 
 .searchField {
     height: 2.1em;
-    font-size: 1.188rem;
+    font-size: 1.188em;
     padding: 0.2em 0.4em 0.2em 0.8em;
     border: 0;
     width: 80%;
@@ -164,8 +164,12 @@ main { grid-area: main; }
 
 
 /* Header */
+header * {
+    font-size: 1.5rem;
+}
+
 header {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     align-self: start;
     position: relative;
     display: flex;
@@ -200,7 +204,6 @@ header {
     width: 100%;
     padding: 0.5em 0 0 0;
     height: fit-content;
-    transition: all 1s ease-in;
 }
 
 .headerNav::before {
@@ -224,49 +227,48 @@ header {
 }
 
 .headerNav--general, .headerNav--topics {
-    z-index: 2;
+    z-index: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
 }
 
-.headerNav > * > *::before {
-    content: '';
-    position: absolute;
-    top: 25%;
-    left: 4%;
-    width: 8px;
-    height: 25%;
-    background-color: white;
-}
-
-.headerNav > * > *::after {
-    content: '';
-    position: absolute;
-    top: 25%;
-    right: 4%;
-    width: 8px;
-    height: 25%;
-    background-color: white;
-}
-
 .headerNav > * > * {
-    width: 99%;
     height: 4em;
+    width: 98%;
     border-radius: 1.3em;
+    padding: 0 1.2em 0 1.2em;
     background-color: rgb(124, 124, 124);
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .headerNav--general, .headerNav--topics {
+        perspective: 800px;
+    }
+
+    .headerNav > * > * {
+        transform-style: preserve-3d;
+    }
+
+    .headerNav > * > *:hover {
+        transform: rotateX(20deg);
+    }
+}
+
 #hiddenMenuButton {
-    z-index: 4;
+    z-index: 2;
     position: absolute;
     border: none;
-    right: 1.3%;
-    top: 100%;
-    width: 50px; /* here's not final values!!! */
-    height: 250px;
+    right: 0.1em;
+    top: -40%;
+    width: 3.125em;
+    height: 18.75em;
     background-color: rebeccapurple;
+}
+
+#hiddenMenuButton:hover {
+    cursor: pointer;
 }
 
 .profileIcon {
@@ -294,7 +296,7 @@ header {
 } 
 
 #profileIconCircle {
-    top: 0.01rem;
+    top: 0.01em;
     font-size: 2.9em;
 }
 
@@ -516,7 +518,7 @@ footer {
 }
 
 .generalLink--footer:hover {
-    transform: translateZ(3px);
+    transform: translateZ(5px);
     color: var(--text-primary);
 }
 
@@ -922,7 +924,7 @@ footer {
 
 @media (min-width: 1280px) {
 /* Header */
-    header {
+    /* header {
         font-size: 1.125rem;
         align-self: start;
         position: relative;
@@ -1011,7 +1013,7 @@ footer {
 
     .topicLink--header:hover {
         background-color: rgba(255, 255, 255, 0.15);
-    }
+    } */
 /*-------------------------------------------------------------*/
 
 
