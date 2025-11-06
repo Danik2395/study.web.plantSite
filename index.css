@@ -72,12 +72,6 @@
 
 
 
-html {
-    font-size: 16px;
-}
-
-
-
 #parallax {
     z-index: -1;
     background-image: url(img/ai-generated-8888638.jpg);
@@ -311,6 +305,7 @@ header {
 
 /* main */
 main {
+    font-size: 1rem;
     text-align: justify;
     display: flex;
     flex-wrap: wrap;
@@ -581,7 +576,20 @@ footer {
 
 
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1440px) and (max-width: 2560px) {
+    html {
+        font-size: calc(16px + 20 * (100vw - 1440px) / 2560);
+    }
+}
+@media (min-width: 2560px) and (max-width: 5120px) {
+    html {
+        font-size: calc(24.75px + 50 * (100vw - 2560px) / 5120);
+    }
+}
+
+
+
+@media (min-width: 1024px) {
     body {
         grid-template-columns: 6fr 2fr;
         grid-template-rows: repeat(3, auto); 
@@ -686,14 +694,6 @@ footer {
 
     #hiddenMenuButton {
         display: none;
-        /* z-index: 2;
-        position: absolute;
-        border: none;
-        right: 0.1em;
-        top: -40%;
-        width: 3.125em;
-        height: 18.75em;
-        background-color: rebeccapurple; */
     }
     /*-------------------------------------------------------------*/
 
@@ -818,6 +818,7 @@ footer {
     }
 
     footer {
+        font-size: 1rem;
         display: flex;
         flex-wrap: wrap;
         flex-direction: unset;
@@ -1073,6 +1074,10 @@ footer {
     order: 3;
 }
 
+.search--footer {
+    width: 16em;
+}
+
 .social {
     order: 4;
 }
@@ -1081,16 +1086,56 @@ footer {
 
 
 
-@media (min-width: 2560px) {
-    html {
-        font-size: 24px;
+/* @media (min-width: 3840px) {
+    .headerNav--topics {
+        --mediaSet: 1;
+        --headerNavTopicsHeight: 0;
+        flex-wrap: wrap;
+        row-gap: 1em;
+        column-gap: 0.5em;
+        mask-image: unset;
+        overflow: hidden;
+        background-color: var(--surface-warm);
     }
-}
+
+    .headerNav--topics:hover {
+        height: var(--headerNavTopicsHeight);
+    }
+
+    .headerNav--topics > * {
+        margin: 0;
+    }
+} */
 
 
 
-@media (min-width: 3440px) {
-    header {
-        padding: 0 ;
+
+@media (min-width: 2560px) and (max-height: 1080px) {
+    html {
+        font-size: 24.75px;
+    }
+
+
+
+    body {
+        grid-template-columns: 1fr 1440px 480px 1fr;
+        grid-template-rows: repeat(3, auto); 
+        gap: 0 0; 
+        grid-template-areas: 
+            "header header header header"
+            ". main aside ."
+            "footer footer footer footer"
+        ;
+    }
+    header { grid-area: header; }
+    footer { grid-area: footer; }
+    main { grid-area: main; }
+    aside { grid-area: aside; }
+
+
+
+    header, footer {
+        padding-left: calc((100vw - 1920px) / 2);
+        padding-right: calc((100vw - 1920px) / 2);
     }
 }

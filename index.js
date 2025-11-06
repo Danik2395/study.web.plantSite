@@ -20,7 +20,7 @@ function hiddenMenuActivator() {
     hiddenMenuHeight = getComputedStyle(hiddenMenu).height;
 
     if (!hiddenMenuOpened) {
-        hiddenMenu.style = `transition: all 0.5s cubic-bezier(0.72,-0.01,0.52,0.95) 0.3s; bottom: -${hiddenMenuHeight};`;
+        hiddenMenu.style = `transition: all 0.4s cubic-bezier(0.72,-0.01,0.52,0.95) 0.3s; bottom: -${hiddenMenuHeight};`;
         hiddenMenuButton.style = "transition: top 0.6s cubic-bezier(0.51,-1.35,0.74,0.05); top: -240%;";
         hiddenMenuButton.setAttribute("aria-label","Скрыть меню")
     }
@@ -36,12 +36,12 @@ hiddenMenuButton.addEventListener('click', hiddenMenuActivator);
 
 
 
-const list = document.querySelector('.headerNav--topics');
-list.scrollLeft = 1;
+const headerNavTopics = document.querySelector('.headerNav--topics');
+headerNavTopics.scrollLeft = 1;
 let swapElementWidth;
 let items;
 
-list.addEventListener('scroll', function() {
+headerNavTopics.addEventListener('scroll', function() {
     items = this.querySelectorAll(".topicLink--header");
 
     if (parseInt(this.scrollLeft) === 0) {
@@ -55,3 +55,10 @@ list.addEventListener('scroll', function() {
         this.scrollLeft = this.scrollWidth - this.clientWidth - swapElementWidth;
     }
 });
+
+
+const media1920px = window.matchMedia("(min-width: 1920px)");
+
+media1920px.addEventListener('change', () => {
+    headerNavTopics.style.setProperty("--headerNavTopicsHeight", `${getComputedStyle(headerNavTopics).height}`)
+})
