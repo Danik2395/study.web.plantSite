@@ -33,3 +33,25 @@ function hiddenMenuActivator() {
     hiddenMenuOpened = !hiddenMenuOpened;
 }
 hiddenMenuButton.addEventListener('click', hiddenMenuActivator);
+
+
+
+const list = document.querySelector('.headerNav--topics');
+list.scrollLeft = 1;
+let swapElementWidth;
+let items;
+
+list.addEventListener('scroll', function() {
+    items = this.querySelectorAll(".topicLink--header");
+
+    if (parseInt(this.scrollLeft) === 0) {
+        swapElementWidth = items[items.length - 1].clientWidth;
+        this.prepend(items[items.length - 1]);
+        this.scrollLeft = swapElementWidth;
+    }
+    else if (this.scrollLeft >= this.scrollWidth - this.clientWidth - 1) {
+        swapElementWidth = items[0].clientWidth;
+        this.append(items[0]);
+        this.scrollLeft = this.scrollWidth - this.clientWidth - swapElementWidth;
+    }
+});
