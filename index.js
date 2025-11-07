@@ -39,22 +39,21 @@ hiddenMenuButton.addEventListener('click', hiddenMenuActivator);
 const headerNavTopics = document.querySelector('.headerNav--topics');
 headerNavTopics.scrollLeft = 1;
 let swapElementWidth;
-let items;
+let items, lastItem, firstItem;
 
 headerNavTopics.addEventListener('scroll', function() {
     items = this.querySelectorAll(".topicLink--header");
+    lastItem = items[items.length - 1];
+    firstItem = items[0];
 
     if (parseInt(this.scrollLeft) === 0) {
-        swapElementWidth = items[items.length - 1].clientWidth;
-        this.prepend(items[items.length - 1]);
+        swapElementWidth = lastItem.getBoundingClientRect().width /* + parseFloat(lastItem.style.marginleft) + parseFloat(lastItem.style.marginright) */;
+        this.prepend(lastItem);
         this.scrollLeft = swapElementWidth;
     }
     else if (this.scrollLeft >= this.scrollWidth - this.clientWidth - 1) {
-        swapElementWidth = items[0].clientWidth;
-        this.append(items[0]);
+        swapElementWidth = firstItem.getBoundingClientRect().width /* + parseFloat(firstItem.style.marginleft) + parseFloat(firstItem.style.marginright) */;
+        this.append(firstItem);
         this.scrollLeft = this.scrollWidth - this.clientWidth - swapElementWidth;
     }
 });
-
-
-
