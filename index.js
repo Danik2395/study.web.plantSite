@@ -57,8 +57,4 @@ headerNavTopics.addEventListener('scroll', function() {
 });
 
 
-const media1920px = window.matchMedia("(min-width: 1920px)");
 
-media1920px.addEventListener('change', () => {
-    headerNavTopics.style.setProperty("--headerNavTopicsHeight", `${getComputedStyle(headerNavTopics).height}`)
-})
