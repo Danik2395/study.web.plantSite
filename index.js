@@ -57,3 +57,57 @@ headerNavTopics.addEventListener('scroll', function() {
         this.scrollLeft = this.scrollWidth - this.clientWidth - swapElementWidth;
     }
 });
+
+
+
+let themeDark = true;
+const themeButton = document.getElementById("themeButton");
+const mainImages = document.querySelectorAll(".mainTileImage");
+const body = document.querySelector("body");
+
+themeButton.addEventListener("mouseover", function() {
+    const preloadBG = new Image();
+    preloadBG.src = "img/bg_light.jpg";
+});
+
+themeButton.addEventListener("click", function() {
+    mainImages.forEach(mainImg => {
+        mainImg.style.setProperty("filter", "blur(10px)");
+    });
+    parallaxElement.style.setProperty("filter", "blur(20px)");
+    body.classList.replace("dark", "light");
+
+    if (themeDark) {
+        this.querySelector("i").classList.replace("fa-moon", "fa-sun");
+        
+        setTimeout(() => {
+            mainImages.forEach(mainImg => {
+                mainImg.src = mainImg.src.replace("_dark.png", "_light.png");
+            });
+
+            parallaxElement.style = "background-position-y: bottom; background-image: url(img/bg_light.jpg);";
+        }, 400);
+    }
+    else {
+        this.querySelector("i").classList.replace("fa-sun", "fa-moon");
+        body.classList.replace("light", "dark");
+
+        setTimeout(() => {
+            mainImages.forEach(mainImg => {
+                mainImg.src = mainImg.src.replace("_light.png", "_dark.png");
+            });
+
+            parallaxElement.style = "background-position-y: center; background-image: url(img/bg_dark.jpg);";
+        }, 400);
+    }
+
+    setTimeout(() => {
+        mainImages.forEach(mainImg => {
+            mainImg.style.setProperty("filter", "unset");
+        });
+
+        parallaxElement.style.setProperty("filter", "unset");
+    }, 400);
+
+    themeDark = !themeDark;
+});

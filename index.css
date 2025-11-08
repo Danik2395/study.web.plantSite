@@ -1,70 +1,137 @@
 /* colors */
 :root {
-  /* Palette 1: Blue tones */
-  --blue-100: #D8EBF7;
-  --blue-200: #85CAE9;
-  --blue-300: #63A2BE;
-  --blue-400: #4B7C91;
-  --blue-500: #335767;
-  --blue-700: #1D3540;
-  --blue-900: #09161C;
+/* dark theme */
+/* Palette 1: Blue tones */
+    --blue-100: #D8EBF7;
+    --blue-200: #85CAE9;
+    --blue-300: #63A2BE;
+    --blue-400: #4B7C91;
+    --blue-500: #335767;
+    --blue-700: #1D3540;
+    --blue-900: #09161C;
 
-  /* Palette 2: Indigo / blue‑violet tones */
-  --indigo-100: #E8ECF8;
-  --indigo-200: #B4C4E9;
-  --indigo-300: #7E9EDA;
-  --indigo-500: #5479B6;
-  --indigo-700: #3B5683;
-  --indigo-800: #233553;
-  --indigo-900: #0D1728;
+    /* Palette 2: Indigo / blue‑violet tones */
+    --indigo-100: #E8ECF8;
+    --indigo-200: #B4C4E9;
+    --indigo-300: #7E9EDA;
+    --indigo-500: #5479B6;
+    --indigo-700: #3B5683;
+    --indigo-800: #233553;
+    --indigo-900: #0D1728;
 
-  /* Palette 3: Gray‑green / slate tones */
-  --slate-100: #E4F4F6;
-  --slate-200: #A9D9E0;
-  --slate-300: #89B0B6;
-  --slate-400: #6A898E;
-  --slate-500: #4D6468;
-  --slate-700: #314144;
-  --slate-900: #182223;
-  
-  /* Palette 4: Violet / lilac tones */
-  --violet-100: #EDF0F9;
-  --violet-200: #BAC8E9;
-  --violet-300: #85A2D9;
-  --violet-500: #5A7DB7;
-  --violet-700: #3F5985;
-  --violet-800: #273856;
-  --violet-900: #101A2B;
-  
-  /* Palette 5: Neutral gray tones */
-  --gray-100: #E6E9EA;
-  --gray-200: #BBC2C4;
-  --gray-400: #969B9D;
-  --gray-500: #727677;
-  --gray-600: #505354;
-  --gray-800: #303233;
-  --gray-900: #141515;
+    /* Palette 3: Gray‑green / slate tones */
+    --slate-100: #E4F4F6;
+    --slate-200: #A9D9E0;
+    --slate-300: #89B0B6;
+    --slate-400: #6A898E;
+    --slate-500: #4D6468;
+    --slate-700: #314144;
+    --slate-900: #182223;
+    
+    /* Palette 4: Violet / lilac tones */
+    --violet-100: #EDF0F9;
+    --violet-200: #BAC8E9;
+    --violet-300: #85A2D9;
+    --violet-500: #5A7DB7;
+    --violet-700: #3F5985;
+    --violet-800: #273856;
+    --violet-900: #101A2B;
+    
+    /* Palette 5: Neutral gray tones */
+    --gray-100: #E6E9EA;
+    --gray-200: #BBC2C4;
+    --gray-400: #969B9D;
+    --gray-500: #727677;
+    --gray-600: #505354;
+    --gray-800: #303233;
+    --gray-900: #141515;
+/*-------------------------------------------------------------*/
 
-  /* Theme colors */
-  --surface-general: #a68a80;
-  --topic-header: rgba(245, 222, 179, 0.242);
-  --topic-header-hover: rgba(255, 255, 255, 0.15);
-  --topic-footer: var(--slate-500);
-  --topic-footer-hover: rgba(255, 255, 255, 0.2);
-  --surface-glass: rgba(230, 233, 234, 0.25);
-  --border-light: rgba(255, 255, 255, 0.2);
-  --text-general: var(--slate-900);
-  --text-aside : #ced6bf;
-  --text-on-general: #443736;
-  --text-placeholder: var(--gray-500);
-  --accent-general: var(--slate-500); 
-  --accent-general-hover: var(--slate-400);
-  --accent-secondary: var(--slate-500);
-  --accent-secondary-hover: var(--indigo-300);
-  --icon-normal: var(--slate-500);
-  --icon-hover: var(--slate-900);
-  --icon-background: rgba(255, 255, 255, 0.3);
-  --shadow: rgba(71, 71, 71, 0.1);
+/* light theme */
+/* Palette 1: Sky Blue Tones */
+    --sky-blue-100: #DCF6F7;
+    --sky-blue-300: #A3DEE1;
+    --sky-blue-500: #67AEB1; /* Custom mid-tone */
+    --sky-blue-700: #027083;
+    --sky-blue-900: #014B58;
+
+    /* Palette 2: Grass Green Tones */
+    --grass-green-100: #C4FECB;
+    --grass-green-300: #38E461;
+    --grass-green-400: #2EB84D;
+    --grass-green-500: #218E3A;
+    --grass-green-600: #156627;
+    --grass-green-800: #0A4116;
+    --grass-green-900: #031F07;
+
+    /* Palette 3: Neutral & Muted Tones */
+    --neutral-100: #DAE9ED;
+    --neutral-300: #A7C3CA;
+    --neutral-500: #859CA2;
+    --neutral-700: #465356;
+    --neutral-900: #0F1314;
+/*-------------------------------------------------------------*/
+
+    --sun: rgba(243, 234, 104, 0.84);
+    --sun-hover: rgba(255, 255, 0, 0.79);
+    --moon: rgba(20, 73, 92, 0.67);
+    --moon-hover: rgba(20, 73, 92, 0.967);
+}
+
+
+
+body.dark {
+    --surface-general: #a68a80;
+    --topic-header: rgba(245, 222, 179, 0.242);
+    --topic-header-hover: rgba(255, 255, 255, 0.15);
+    --window-blinds: var(--gray-500);
+    --topic-footer: var(--slate-500);
+    --topic-footer-hover: rgba(255, 255, 255, 0.2);
+    --surface-glass: rgba(230, 233, 234, 0.25);
+    --border-light: rgba(255, 255, 255, 0.2);
+    --text-general: var(--slate-900);
+    --text-aside : #ced6bf;
+    --text-aside-hover: var(--slate-100);
+    --text-on-general: #443736;
+    --text-placeholder: var(--gray-500);
+    --accent-general: var(--slate-500); 
+    --accent-general-hover: var(--slate-400);
+    --accent-secondary: var(--slate-500);
+    --accent-secondary-hover: var(--indigo-300);
+    --icon-normal: var(--slate-500);
+    --icon-hover: var(--slate-900);
+    --icon-background: rgba(255, 255, 255, 0.3);
+    --shadow: rgba(71, 71, 71, 0.1);
+    --tv-menu-hover: var(--gray-500);
+    --theme-button-color: var(--moon);
+    --theme-button-color-hover: var(--moon-hover);
+}
+
+body.light {
+    --surface-general: var(--sky-blue-100);
+    --topic-header: rgba(33, 142, 58, 0.15);
+    --topic-header-hover: rgba(33, 142, 58, 0.3);
+    --window-blinds: var(--neutral-500);
+    --topic-footer: var(--grass-green-600);
+    --topic-footer-hover: rgba(3, 31, 7, 0.1);
+    --surface-glass: rgba(255, 255, 255, 0.4);
+    --border-light: rgba(10, 65, 22, 0.2);
+    --text-general: var(--grass-green-900);
+    --text-aside: var(--sky-blue-900);
+    --text-aside-hover: var(--sky-blue-500);
+    --text-on-general: var(--grass-green-600);
+    --text-placeholder: var(--sky-blue-500);
+    --accent-general: var(--grass-green-500);
+    --accent-general-hover: var(--grass-green-400);
+    --accent-secondary: var(--grass-green-600);
+    --accent-secondary-hover: var(--grass-green-500);
+    --icon-normal: var(--sky-blue-700);
+    --icon-hover: var(--sky-blue-900);
+    --icon-background: rgba(255, 255, 255, 0.5);
+    --shadow: rgba(21, 102, 39, 0.15);
+    --tv-menu-hover: var(--neutral-300);
+    --theme-button-color: var(--sun);
+    --theme-button-color-hover: var(--sun-hover);
 }
 /*------------------------------------------------------------- */
 
@@ -87,7 +154,7 @@
     background-position-y: center;
     position: fixed;
     width: 100%;
-    height: 150%;
+    height: 160%;
     transition: none;
 }
 
@@ -253,7 +320,7 @@ header {
     width: 98%;
     border-radius: 1.3em;
     padding: 0 1.2em 0 1.2em;
-    background-color: var(--gray-500);
+    background-color: var(--window-blinds);
 }
 
 #splitter--headerNav {
@@ -324,7 +391,17 @@ header {
 
 #themeButton {
     z-index: 4;
+    background-color: transparent;
+    border: none;
+    width: 2.5em;
+    height: 2em;
+    color: var(--theme-button-color);
 }
+#themeButton:hover {
+    cursor: pointer;
+    color: var(--theme-button-color-hover);
+}
+
 /*-------------------------------------------------------------*/
 
 
@@ -359,8 +436,9 @@ main > *{
 .mainTileImage {
     height: inherit;
     object-fit: cover;
-    max-width: 45%;
+    width: 45%;
     border-radius: 1.3em;
+    clip-path: inset(0 0 0 0 round 1.3em);
 }
 
 .mainTileContent {
@@ -633,10 +711,10 @@ footer {
     header {
         font-size: 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         height: 5em;
         width: 100%;
-        padding: 0 2em 0 2em;
+        padding: 0 1.5em 0 1.5em;
         background-color: var(--surface-general);
     }
 
@@ -651,10 +729,8 @@ footer {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
         padding: unset;
         margin: 0 1% 0 1%;
-        width: 5%;
     }
 
     .search--header {
@@ -662,17 +738,16 @@ footer {
     }
 
     .headerNav {
-        z-index: unset;
+        z-index: 1;
         visibility: unset;
         position: unset;
         flex-flow: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         gap: 1em;
-        width: unset;
+        width: 90%;
         padding: unset;
         padding: 0 1% 0 1%;
         height: inherit;
-        width: 95%;
     }
 
     .headerNav::before, .headerNav::after {
@@ -738,6 +813,10 @@ footer {
 
     #profileIconCircle {
         top: 0.01em;
+    }
+
+    #themeButton {
+        z-index: unset;
     }
     /*-------------------------------------------------------------*/
 
@@ -849,7 +928,7 @@ footer {
 
         .asideBlock h3:hover {
             transform: translateZ(5px);
-            color: var(--slate-100);
+            color: var(--text-aside-hover);
         }
 
         .asideBlock > h3 a {
@@ -963,12 +1042,12 @@ footer {
 
 
 /* TV adaptive */
-@media (min-width: 3840px) {
+@media (min-width: 3840px) and (min-height: 1080px) {
 
     .headerNav--topics {
         position: relative;
         flex-wrap: wrap;
-        row-gap: 1.2em;
+        row-gap: 1.3em;
         column-gap: 0.5em;
         mask-image: unset;
         height: fit-content;
@@ -992,7 +1071,7 @@ footer {
     }
 
     .headerNav--topics:hover {
-        background-color: var(--gray-500);
+        background-color: var(--tv-menu-hover);
         clip-path: inset(0 0 0 0);
     }
     .headerNav--topics:hover::before {
