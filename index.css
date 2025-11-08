@@ -182,11 +182,20 @@ header {
     height: 4em;
     box-shadow: 0.0625rem 0.635rem 1.25rem var(--shadow);
     color: var(--text-on-general);
+}
+
+#colorPanel {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
     background-color: var(--surface-general);
 }
 
 .headerMajor {
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     height: inherit;
     display: flex;
@@ -194,10 +203,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 2em 0 2em;
-    background-color: var(--surface-general);
 }
 
 .headerNav {
+    --visibility-headerNav: hidden;
     z-index: 1;
     position: absolute;
     display: flex;
@@ -208,6 +217,7 @@ header {
     width: 100%;
     padding: 0.5em 0 0 0;
     height: fit-content;
+    visibility: var(--visibility-headerNav);
 }
 
 .headerNav::before {
@@ -304,13 +314,16 @@ header {
 } 
 
 #profileIconCircle {
-    top: 0.01em;
     font-size: 2.9em;
 }
 
 #profileIconUser {
     font-size: 2.1em;
     top: 0.3em;
+}
+
+#themeButton {
+    z-index: 4;
 }
 /*-------------------------------------------------------------*/
 
@@ -624,9 +637,15 @@ footer {
         height: 5em;
         width: 100%;
         padding: 0 2em 0 2em;
+        background-color: var(--surface-general);
+    }
+
+    #colorPanel {
+        display: none;
     }
 
     .headerMajor {
+        z-index: unset;
         width: unset;
         height: inherit;
         display: flex;
@@ -643,6 +662,8 @@ footer {
     }
 
     .headerNav {
+        z-index: unset;
+        visibility: unset;
         position: unset;
         flex-flow: row;
         justify-content: space-around;
@@ -713,6 +734,10 @@ footer {
 
     #hiddenMenuButton {
         display: none;
+    }
+
+    #profileIconCircle {
+        top: 0.01em;
     }
     /*-------------------------------------------------------------*/
 

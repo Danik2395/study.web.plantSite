@@ -12,6 +12,8 @@
     <div id="parallax"></div>
 
     <header>
+        <div id="colorPanel"></div>
+
         <div class="headerMajor">
             <a href="#5" class="profileIcon--container" aria-label="Профиль">
                 <i class="profileIcon fa-regular fa-circle" id="profileIconCircle"></i>
@@ -19,11 +21,13 @@
             </a>
 
             <div class="search--container search--header">
-                <input type="text" placeholder="Найти тему" name="searchField" class="searchField">
+                <input type="text" placeholder="Найти тему" name="searchField" class="searchField" autocomplete="off">
                 <button class="searchButton" aria-label="Искать">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </button>
             </div>
+
+            
         </div>
 
         <button id="hiddenMenuButton" aria-label="Показать меню"></button>
@@ -46,6 +50,8 @@
                 <span class="topicLink--header" id="splitter--headerNav">&bull;</span>
             </div>
         </nav>
+
+        <button id="themeButton" aria-label="Сменить тему"><i class="fa-solid fa-sun fa-2xl"></i></button>
     </header>
 
     <main>
@@ -118,7 +124,7 @@
 
     <aside>
         <div class="search--container search--aside">
-            <input type="text" placeholder="Найти тему" name="searchField" class="searchField">
+            <input type="text" placeholder="Найти тему" name="searchField" class="searchField" autocomplete="off">
             <button class="searchButton">
                 <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             </button>
