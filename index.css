@@ -75,7 +75,7 @@
 
 #parallax {
     z-index: -1;
-    background-image: url(img/ai-generated-8888638.jpg);
+    background-image: url(img/bg_dark.jpg);
     background-size: cover;
     background-position-y: center;
     position: fixed;
@@ -317,7 +317,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 3em;
-    padding: 2em 0 2em 1.5em;
+    padding: 2em 1em 2em 1em;
 }
 
 main > *{
@@ -705,6 +705,9 @@ footer {
         margin: 0 0.5em 0 0.5em;
         font-family: Times New Roman, Georgia;
     }
+    #splitter--headerNav:hover {
+        cursor: default;
+    }
 
     #hiddenMenuButton {
         display: none;
@@ -713,6 +716,10 @@ footer {
 
 
     /* main */
+    main {
+        padding: 2em 0 2em 1.5em;
+    }
+
     .mainTile {
         width: 38em;
     }
@@ -1100,10 +1107,11 @@ footer {
 
 
 
+/* TV adaptive */
 @media (min-width: 3840px) {
-    .headerNav {
+    /* .headerNav {
         overflow: hidden;
-    }
+    } */
 
     .headerNav--topics {
         position: relative;
@@ -1118,6 +1126,8 @@ footer {
         border-bottom-right-radius: 1.3em;
         /* overflow: hidden; */
         background-color: var(--surface-warm);
+        transition: all 0.5s;
+        clip-path: inset(0 0 calc(100% - 5em) 0);
     }
     .headerNav--topics::before {
         content: '\2771';
@@ -1129,16 +1139,17 @@ footer {
         height: 1em; */
         font-size: 1.5rem;
         transform: rotate(90deg);
-        transition: opacity 0.4s;
+        transition: opacity 0.5s;
         color: inherit;
     }
 
     .headerNav--topics:hover {
         background-color: var(--gray-500);
+        clip-path: inset(0 0 0 0);
     }
-    .headerNav:has(.headerNav--topics:hover) {
+    /* .headerNav:has(.headerNav--topics:hover) {
         overflow: visible;
-    }
+    } */
     .headerNav--topics:hover::before {
         opacity: 0;
     }
@@ -1151,10 +1162,11 @@ footer {
         display: none;
     }
 }
+/*-------------------------------------------------------------*/
 
 
 
-
+/* Ultrawide monitors adaptive */
 @media (min-width: 2560px) and (max-height: 1080px) {
     html {
         font-size: 24.75px;
@@ -1184,3 +1196,4 @@ footer {
         padding-right: calc((100vw - 1920px) / 2);
     }
 }
+/*-------------------------------------------------------------*/
