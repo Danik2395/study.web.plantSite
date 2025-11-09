@@ -149,7 +149,7 @@ body.light {
 
 #parallax {
     z-index: -1;
-    background-image: url(img/bg_dark.jpg);
+    background-image: url(img/bg_light.jpg);
     background-size: cover;
     background-position-y: center;
     position: fixed;
@@ -349,7 +349,7 @@ header {
     top: -40%;
     width: 3.125em;
     height: 18.75em;
-    background-color: rebeccapurple;
+    background-color: transparent;
 }
 
 #hiddenMenuButton:hover {

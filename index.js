@@ -47,12 +47,12 @@ headerNavTopics.addEventListener('scroll', function() {
     firstItem = items[0];
 
     if (parseInt(this.scrollLeft) === 0) {
-        swapElementWidth = lastItem.getBoundingClientRect().width /* + parseFloat(lastItem.style.marginleft) + parseFloat(lastItem.style.marginright) */;
+        swapElementWidth = lastItem.getBoundingClientRect().width;
         this.prepend(lastItem);
         this.scrollLeft = swapElementWidth;
     }
     else if (this.scrollLeft >= this.scrollWidth - this.clientWidth - 1) {
-        swapElementWidth = firstItem.getBoundingClientRect().width /* + parseFloat(firstItem.style.marginleft) + parseFloat(firstItem.style.marginright) */;
+        swapElementWidth = firstItem.getBoundingClientRect().width;
         this.append(firstItem);
         this.scrollLeft = this.scrollWidth - this.clientWidth - swapElementWidth;
     }
@@ -60,14 +60,14 @@ headerNavTopics.addEventListener('scroll', function() {
 
 
 
-let themeDark = true;
+let themeDark = false;
 const themeButton = document.getElementById("themeButton");
 const mainImages = document.querySelectorAll(".mainTileImage");
 const body = document.querySelector("body");
 
 themeButton.addEventListener("mouseover", function() {
     const preloadBG = new Image();
-    preloadBG.src = "img/bg_light.jpg";
+    preloadBG.src = "img/bg_dark.jpg";
 });
 
 themeButton.addEventListener("click", function() {
