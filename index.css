@@ -85,6 +85,7 @@ body.dark {
     --topic-header: rgba(245, 222, 179, 0.242);
     --topic-header-hover: rgba(255, 255, 255, 0.15);
     --window-blinds: var(--gray-500);
+    --window-blinds-strings: white;
     --topic-footer: var(--slate-500);
     --topic-footer-hover: rgba(255, 255, 255, 0.2);
     --surface-glass: rgba(230, 233, 234, 0.25);
@@ -112,6 +113,7 @@ body.light {
     --topic-header: rgba(33, 142, 58, 0.15);
     --topic-header-hover: rgba(33, 142, 58, 0.3);
     --window-blinds: var(--neutral-500);
+    --window-blinds-strings: var(--gray-200);
     --topic-footer: var(--grass-green-600);
     --topic-footer-hover: rgba(3, 31, 7, 0.1);
     --surface-glass: rgba(255, 255, 255, 0.4);
@@ -287,25 +289,16 @@ header {
     visibility: var(--visibility-headerNav);
 }
 
-.headerNav::before {
+.headerNav::before, .headerNav::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 5%;
     width: 8px;
     height: 100%;
-    background-color: white;
+    background-color: var(--window-blinds-strings);
 }
-
-.headerNav::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 5%;
-    width: 8px;
-    height: 100%;
-    background-color: white;
-}
+.headerNav::before { left: 5%; }
+.headerNav::after { right: 5%; }
 
 .headerNav--general, .headerNav--topics {
     z-index: inherit;
@@ -434,9 +427,10 @@ main > *{
 }
 
 .mainTileImage {
-    height: inherit;
+    height: 100%;
     object-fit: cover;
     width: 45%;
+    flex-shrink: 0;
     border-radius: 1.3em;
     clip-path: inset(0 0 0 0 round 1.3em);
 }
@@ -765,6 +759,7 @@ footer {
     }
 
     .headerNav--topics {
+        scrollbar-width: none;
         overflow-x: scroll;
         gap: unset;
         justify-content: unset;
@@ -970,9 +965,14 @@ footer {
     }
 
     .footerNav--topics {
-        flex-wrap: wrap;
+        /* flex-wrap: wrap;
         align-items: unset;
+        height: 12em; */
+        display: grid;
         height: 12em;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        grid-template-rows: repeat(4, 1fr);
     }
 
     .topicLink--footer {
