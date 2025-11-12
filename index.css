@@ -514,8 +514,8 @@ footer {
 
 .logo--footer img {
     object-fit: cover;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
 }
 
 .credits p {
